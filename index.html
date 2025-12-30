@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tap-op - A calm, zen mobile experience. Just tap. Feel better. Free, offline, no ads.">
+    <title>Tap-op - Just tap. Feel better.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            background-attachment: fixed;
+            color: #e4e4e4;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #e4e4e4 0%, #a8dadc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero .tagline {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: #a8dadc;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .hero .features {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            animation: fadeInUp 1.4s ease-out;
+        }
+
+        .hero .features span {
+            padding: 10px 20px;
+            background: rgba(168, 218, 220, 0.1);
+            border-radius: 25px;
+            border: 1px solid rgba(168, 218, 220, 0.3);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 20px;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #a8dadc;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            background: rgba(168, 218, 220, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(168, 218, 220, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(168, 218, 220, 0.2);
+        }
+
+        .screenshot-placeholder {
+            width: 100%;
+            aspect-ratio: 9/16;
+            background: linear-gradient(135deg, rgba(168, 218, 220, 0.1) 0%, rgba(168, 218, 220, 0.05) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: rgba(168, 218, 220, 0.5);
+            border: 1px solid rgba(168, 218, 220, 0.2);
+        }
+
+        .gallery-item figcaption {
+            text-align: center;
+            font-size: 1rem;
+            color: #a8dadc;
+            font-weight: 300;
+        }
+
+        /* Community Section */
+        .community {
+            background: rgba(168, 218, 220, 0.03);
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border: 2px solid #a8dadc;
+            background: rgba(168, 218, 220, 0.1);
+            color: #a8dadc;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: rgba(168, 218, 220, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(168, 218, 220, 0.3);
+        }
+
+        .btn.primary {
+            background: linear-gradient(135deg, #457b9d 0%, #1d3557 100%);
+            border-color: #457b9d;
+            color: #e4e4e4;
+        }
+
+        .btn.primary:hover {
+            background: linear-gradient(135deg, #5a8fb1 0%, #2a4a6f 100%);
+            box-shadow: 0 8px 20px rgba(69, 123, 157, 0.4);
+        }
+
+        /* Privacy Section */
+        .privacy {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #c4c4c4;
+        }
+
+        .privacy-content strong {
+            color: #a8dadc;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 20px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            border-top: 1px solid rgba(168, 218, 220, 0.1);
+        }
+
+        footer p {
+            font-size: 1rem;
+            color: #888;
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        footer .heart {
+            color: #f1faee;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.3rem;
+            }
+
+            .hero .features {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
+            .buttons-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.1rem;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Tap-op</h1>
+            <p class="tagline">Just tap. Feel better.</p>
+            <div class="features">
+                <span>FREE</span>
+                <span>OFFLINE</span>
+                <span>NO ADS</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="gallery-grid">
+                <figure class="gallery-item">
+                    <div class="screenshot-placeholder">Screenshot</div>
+                    <figcaption>Simple, minimal interface</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <div class="screenshot-placeholder">Screenshot</div>
+                    <figcaption>Tap to find your calm</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <div class="screenshot-placeholder">Screenshot</div>
+                    <figcaption>Zen moments, anytime</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community">
+        <div class="container">
+            <h2>Connect</h2>
+            <div class="buttons-container">
+                <a href="https://reddit.com/r/tapop" class="btn primary" target="_blank" rel="noopener noreferrer">
+                    Join the Reddit community
+                </a>
+                <a href="#support" class="btn">
+                    Support the dev
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section class="privacy">
+        <div class="container">
+            <h2>Privacy</h2>
+            <div class="privacy-content">
+                <p>
+                    Your data stays on your device. <strong>Everything is local-only</strong> unless you choose to share. 
+                    No tracking, no analytics, no servers. Just you and your calm.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Made with <span class="heart">❤</span> by a solo developer</p>
+            <p>My first app at 50</p>
+        </div>
+    </footer>
+</body>
+</html>
