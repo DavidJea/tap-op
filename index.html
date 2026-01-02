@@ -106,15 +106,16 @@
         }
 
         .gallery-content {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
         }
 
         .gallery-image {
             width: 100%;
-            max-width: 600px;
-            display: block;
-            margin: 0 auto 3rem auto;
             border-radius: 15px;
             border: 1px solid rgba(168, 218, 220, 0.2);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -140,12 +141,7 @@
             color: #c4c4c4;
         }
 
-        .writeup .divider {
-            text-align: center;
-            margin: 2rem 0;
-            color: rgba(168, 218, 220, 0.4);
-            font-size: 1.2rem;
-        }
+
 
         .writeup ul {
             list-style: none;
@@ -260,6 +256,11 @@
                 font-size: 2rem;
             }
 
+            .gallery-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
             .buttons-container {
                 flex-direction: column;
                 align-items: center;
@@ -309,45 +310,22 @@
                 <img src="IMG_3266.png" alt="Tapop Game Screenshot" class="gallery-image">
                 
                 <div class="writeup">
-                    <h3>🎉 Tapop</h3>
-                    <p>A game so customizable, it might as well be yours.</p>
+                    <h3>Tap, Pop, Smile</h3>
+                    <p>A game so customizable, it might as well be yours. No tutorials, no clunky controls—just tap to play, pop some baddies, and let the chaos unfold. Whether you're 7 or 77, Tapop delivers instant fun for all.</p>
                     
-                    <div class="divider">⸻</div>
-                    
-                    <h3>👆 Tap, Pop, Smile</h3>
-                    <p>No tutorials. No clunky controls. Just tap to play, pop some baddies, and let the chaos unfold. Whether you're 7 or 77, Tapop is instant fun for all fingers.</p>
-                    
-                    <div class="divider">⸻</div>
-                    
-                    <h3>🎨 You're the Artist, Composer &amp; Chaos Designer</h3>
-                    <p>Tapop doesn't just let you play—it begs you to play your way.</p>
+                    <h3>Fully Customizable</h3>
+                    <p>Tapop lets you create your perfect game:</p>
                     <ul>
-                        <li>🖼 <strong>Swap in Your Own Villains</strong><br>
-                        Tired of cookie-cutter bad guys? Upload your own images, crop 'em, resize 'em, make them ridiculously epic or hilariously dumb. Your game, your rules.</li>
-                        <li>🎤 <strong>Record Custom Sounds</strong><br>
-                        Want your evil laugh to echo across the battlefield? Or maybe your cat's meow as a power-up sound? Yup, you can do that too.</li>
+                        <li><strong>Swap in Your Own Villains</strong>—Upload images, crop, resize, and make them yours</li>
+                        <li><strong>Record Custom Sounds</strong>—From evil laughs to your cat's meow</li>
+                        <li><strong>Choose Game Modes</strong>—Mix and match visuals, sounds, and gameplay styles</li>
                     </ul>
                     
-                    <div class="divider">⸻</div>
+                    <h3>Share Your Creation</h3>
+                    <p>Made something awesome? Export your custom theme and share it. Want more? Import themes from our Reddit community. It's a remix party.</p>
                     
-                    <h3>🔁 Create. Share. Download. Repeat.</h3>
-                    <p>Made something awesome? Export your custom theme and show it off. Want more chaos? Import themes made by others from our Reddit community. It's a remix party, and everyone's invited.</p>
-                    
-                    <div class="divider">⸻</div>
-                    
-                    <h3>🌈 Mix-and-Match Game Modes</h3>
-                    <p>Choose from pre-built themes like "Cupcake Invasion" or "Villain Parade"—or mash up your own using different visuals, sounds, and gameplay styles. From slow-and-sneaky to full-on tap frenzy, every round feels new.</p>
-                    
-                    <div class="divider">⸻</div>
-                    
-                    <h3>✈️ Offline. Ad-Free. Sanity-Saving.</h3>
-                    <p>No ads. No internet. Just pure, uninterrupted popping fun whenever you need it—on a plane, in a cave, or while avoiding your next meeting.</p>
-                    
-                    <div class="divider">⸻</div>
-                    
-                    <h3>🚀 Tapop Is Waiting. Are You Ready to Pop?</h3>
-                    <p>Start playing. Start customizing. Start laughing.<br>
-                    The most "you" game ever is just a tap away.</p>
+                    <h3>Offline &amp; Ad-Free</h3>
+                    <p>No ads. No internet required. Just pure, uninterrupted fun whenever you need it—on a plane, in a cave, or while avoiding your next meeting.</p>
                 </div>
             </div>
         </div>
