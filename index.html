@@ -105,46 +105,58 @@
             background: rgba(0, 0, 0, 0.2);
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
+        .gallery-content {
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        .gallery-item {
-            background: rgba(168, 218, 220, 0.05);
-            border-radius: 15px;
-            padding: 20px;
-            border: 1px solid rgba(168, 218, 220, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(168, 218, 220, 0.2);
-        }
-
-        .screenshot-placeholder {
+        .gallery-image {
             width: 100%;
-            aspect-ratio: 9/16;
-            background: linear-gradient(135deg, rgba(168, 218, 220, 0.1) 0%, rgba(168, 218, 220, 0.05) 100%);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: rgba(168, 218, 220, 0.5);
+            max-width: 600px;
+            display: block;
+            margin: 0 auto 3rem auto;
+            border-radius: 15px;
             border: 1px solid rgba(168, 218, 220, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .gallery-item figcaption {
-            text-align: center;
-            font-size: 1rem;
+        .writeup {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.9;
+            color: #e4e4e4;
+        }
+
+        .writeup h3 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
             color: #a8dadc;
-            font-weight: 300;
+        }
+
+        .writeup p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #c4c4c4;
+        }
+
+        .writeup .divider {
+            text-align: center;
+            margin: 2rem 0;
+            color: rgba(168, 218, 220, 0.4);
+            font-size: 1.2rem;
+        }
+
+        .writeup ul {
+            list-style: none;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .writeup li {
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+            color: #c4c4c4;
         }
 
         /* Community Section */
@@ -248,11 +260,6 @@
                 font-size: 2rem;
             }
 
-            .gallery-grid {
-                grid-template-columns: 1fr;
-                max-width: 400px;
-            }
-
             .buttons-container {
                 flex-direction: column;
                 align-items: center;
@@ -298,19 +305,50 @@
     <section class="gallery">
         <div class="container">
             <h2>Experience</h2>
-            <div class="gallery-grid">
-                <figure class="gallery-item">
-                    <div class="screenshot-placeholder">Screenshot</div>
-                    <figcaption>Simple, minimal interface</figcaption>
-                </figure>
-                <figure class="gallery-item">
-                    <div class="screenshot-placeholder">Screenshot</div>
-                    <figcaption>Tap to find your calm</figcaption>
-                </figure>
-                <figure class="gallery-item">
-                    <div class="screenshot-placeholder">Screenshot</div>
-                    <figcaption>Zen moments, anytime</figcaption>
-                </figure>
+            <div class="gallery-content">
+                <img src="IMG_3266.png" alt="Tapop Game Screenshot" class="gallery-image">
+                
+                <div class="writeup">
+                    <h3>🎉 Tapop</h3>
+                    <p>A game so customizable, it might as well be yours.</p>
+                    
+                    <div class="divider">⸻</div>
+                    
+                    <h3>👆 Tap, Pop, Smile</h3>
+                    <p>No tutorials. No clunky controls. Just tap to play, pop some baddies, and let the chaos unfold. Whether you're 7 or 77, Tapop is instant fun for all fingers.</p>
+                    
+                    <div class="divider">⸻</div>
+                    
+                    <h3>🎨 You're the Artist, Composer &amp; Chaos Designer</h3>
+                    <p>Tapop doesn't just let you play—it begs you to play your way.</p>
+                    <ul>
+                        <li>🖼 <strong>Swap in Your Own Villains</strong><br>
+                        Tired of cookie-cutter bad guys? Upload your own images, crop 'em, resize 'em, make them ridiculously epic or hilariously dumb. Your game, your rules.</li>
+                        <li>🎤 <strong>Record Custom Sounds</strong><br>
+                        Want your evil laugh to echo across the battlefield? Or maybe your cat's meow as a power-up sound? Yup, you can do that too.</li>
+                    </ul>
+                    
+                    <div class="divider">⸻</div>
+                    
+                    <h3>🔁 Create. Share. Download. Repeat.</h3>
+                    <p>Made something awesome? Export your custom theme and show it off. Want more chaos? Import themes made by others from our Reddit community. It's a remix party, and everyone's invited.</p>
+                    
+                    <div class="divider">⸻</div>
+                    
+                    <h3>🌈 Mix-and-Match Game Modes</h3>
+                    <p>Choose from pre-built themes like "Cupcake Invasion" or "Villain Parade"—or mash up your own using different visuals, sounds, and gameplay styles. From slow-and-sneaky to full-on tap frenzy, every round feels new.</p>
+                    
+                    <div class="divider">⸻</div>
+                    
+                    <h3>✈️ Offline. Ad-Free. Sanity-Saving.</h3>
+                    <p>No ads. No internet. Just pure, uninterrupted popping fun whenever you need it—on a plane, in a cave, or while avoiding your next meeting.</p>
+                    
+                    <div class="divider">⸻</div>
+                    
+                    <h3>🚀 Tapop Is Waiting. Are You Ready to Pop?</h3>
+                    <p>Start playing. Start customizing. Start laughing.<br>
+                    The most "you" game ever is just a tap away.</p>
+                </div>
             </div>
         </div>
     </section>
