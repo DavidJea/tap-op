@@ -286,6 +286,86 @@
                 padding: 60px 20px;
             }
         }
+
+        /* Ko-Fi Modal */
+        .kofi-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .kofi-modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .kofi-modal-content {
+            position: relative;
+            background-color: #f9f9f9;
+            margin: 20px;
+            padding: 0;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            animation: slideIn 0.3s ease;
+        }
+
+        .kofi-close {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            color: #666;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+            background: white;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            transition: all 0.3s ease;
+        }
+
+        .kofi-close:hover {
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .kofi-modal-content {
+                max-width: 95%;
+                margin: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -295,11 +375,9 @@
             <h1>Tap-op</h1>
             <p class="tagline">Just tap. Feel better.</p>
             <div class="buttons-container">
-                <!--
-                <button onclick="kofiWidgetOverlay.openDialog('tapop')" class="btn primary">
+                <button onclick="openKofiModal()" class="btn primary">
                     Support the Dev $
                 </button>
-                -->
                 <a href="https://reddit.com/r/tapop" class="btn" target="_blank" rel="noopener noreferrer">
                     Community (Reddit)
                 </a>
@@ -332,15 +410,37 @@
         </div>
     </footer>
 
-    <!-- Ko-Fi Widget -->
-    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <!-- Ko-Fi Modal -->
+    <div id="kofiModal" class="kofi-modal">
+        <div class="kofi-modal-content">
+            <span class="kofi-close" onclick="closeKofiModal()">&times;</span>
+            <iframe id='kofiframe' src='https://ko-fi.com/tapop/?hidefeed=true&widget=true&embed=true&preview=true' style='border:none;width:100%;padding:4px;background:#f9f9f9;border-radius:10px;' height='712' title='tapop'></iframe>
+        </div>
+    </div>
+
     <script>
-      kofiWidgetOverlay.draw('tapop', {
-        'type': 'floating-chat',
-        'floating-chat.donateButton.text': 'Support the Dev $',
-        'floating-chat.donateButton.background-color': '#2a4a6f',
-        'floating-chat.donateButton.text-color': '#a8dadc'
-      });
+        function openKofiModal() {
+            document.getElementById('kofiModal').classList.add('active');
+        }
+
+        function closeKofiModal() {
+            document.getElementById('kofiModal').classList.remove('active');
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('kofiModal');
+            if (event.target === modal) {
+                closeKofiModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeKofiModal();
+            }
+        });
     </script>
 </body>
 </html>
