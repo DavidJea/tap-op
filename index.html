@@ -295,16 +295,15 @@
             <h1>Tap-op</h1>
             <p class="tagline">Just tap. Feel better.</p>
             <div class="buttons-container">
+                <button onclick="kofiWidgetOverlay.openDialog('tapop')" class="btn primary">
+                    Support the Dev $
+                </button>
                 <a href="https://reddit.com/r/tapop" class="btn" target="_blank" rel="noopener noreferrer">
                     Community (Reddit)
                 </a>
                 <a href="https://apps.apple.com/us/app/roblox/id43194615a2" class="btn" target="_blank" rel="noopener noreferrer">
                     Download (iOS)
                 </a>
-            </div>
-            <div style="margin-top: 2rem;">
-                <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
-                <script type='text/javascript'>kofiwidget2.init('Support the Dev $', '#a8dadc', 'X8X11RHN36');kofiwidget2.draw();</script>
             </div>
         </div>
     </section>
@@ -330,5 +329,16 @@
             <p><a href="privacy.html" style="color: #888; transition: color 0.3s ease;">Privacy Policy</a></p>
         </div>
     </footer>
+
+    <!-- Ko-Fi Widget -->
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+      kofiWidgetOverlay.draw('tapop', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Support me',
+        'floating-chat.donateButton.background-color': '#5bc0de',
+        'floating-chat.donateButton.text-color': '#323842'
+      });
+    </script>
 </body>
 </html>
