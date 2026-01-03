@@ -295,9 +295,9 @@
             <h1>Tap-op</h1>
             <p class="tagline">Just tap. Feel better.</p>
             <div class="buttons-container">
-                <a href="https://www.buymeacoffee.com/tapop" class="btn primary" target="_blank" rel="noopener noreferrer">
+                <button onclick="kofiWidgetOverlay.openDialog('tapop')" class="btn primary">
                     Support the Dev $
-                </a>
+                </button>
                 <a href="https://reddit.com/r/tapop" class="btn" target="_blank" rel="noopener noreferrer">
                     Community (Reddit)
                 </a>
@@ -329,5 +329,16 @@
             <p><a href="privacy.html" style="color: #888; transition: color 0.3s ease;">Privacy Policy</a></p>
         </div>
     </footer>
+
+    <!-- Ko-Fi Widget -->
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+      kofiWidgetOverlay.draw('tapop', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Support me',
+        'floating-chat.donateButton.background-color': '#5bc0de',
+        'floating-chat.donateButton.text-color': '#323842'
+      });
+    </script>
 </body>
 </html>
